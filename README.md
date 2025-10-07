@@ -68,7 +68,11 @@ function pagination(jsonData, nowPage){
   displayData(data.value);
   // pageBtn(page);
 }
-  ```
+```
+:::
+
+
+
 - 上面的程式碼，可以得到
 ```
     總頁數，pageTotal,      
@@ -108,6 +112,9 @@ function displayData(data){
     page.value.currentPage = p
     }
 ```
+:::
+
+
 :::spoiler 最後一頁  
 ```  
     // 邏輯跟上一頁雷同
@@ -117,6 +124,10 @@ function displayData(data){
     page.value.currentPage = p
     if (page.value.currentPage > page.value.pageTotal) page.value.currentPage = page.value.pageTotal
 ```
+:::
+
+
+
 :::spoiler 中間數字頁    
   ```
   }else{
@@ -131,6 +142,8 @@ onMounted(()=>{
   getData();
 })
 ```
+:::
+
 
 #### HTML 部分，分成兩區塊
 - 資料內容，由每一頁的頁數，從所有的資料中，切割出內頁的資料。
