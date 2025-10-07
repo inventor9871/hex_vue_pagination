@@ -1,20 +1,19 @@
 <script setup>
-import axios from 'axios';
+
 import { onMounted, ref } from 'vue';
 
+import axios from 'axios';
 const jsonData = ref([])
 const getData = async()=>{
   const res = await axios.get('https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json')
-  // console.log(res)
   jsonData.value = res.data.result.records;
-  // console.log(jsonData.value)
   pagination(jsonData,2)
 }
 
 const page = ref({})
 function pagination(jsonData, nowPage){
 
-  // 取得所有資料
+  // 取得所有資料長度
   const dataTotal = jsonData.value.length;
 
   // 設定每頁的資料數量
@@ -46,7 +45,9 @@ function pagination(jsonData, nowPage){
     }
   });
 
+
   // 紀錄頁數資訊，那頁資料
+  
   page.value = {
     pageTotal,
     currentPage,
@@ -119,8 +120,8 @@ onMounted(()=>{
 })
 </script>
 <template>
+  <!-- 內容 -->
   <div class="row">
-
     <div class="col-md-3 py-2" v-for="x in page.data" :key="x">
       <div class="card">
         <div class="card bg-dark text-white text-left">
@@ -140,6 +141,8 @@ onMounted(()=>{
       </div>
     </div>
   </div>
+
+  <!-- 頁數 -->
   <div class="d-flex justify-content-center mt-4">
     <nav aria-label="Page navigation example">
       <ul  class="pagination" id="pageid" > 
@@ -158,5 +161,8 @@ onMounted(()=>{
 </template>
 
 <style>
-
+.row{
+  margin-right: 0;
+  margin-left: 0;
+}
 </style>
