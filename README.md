@@ -18,7 +18,7 @@ const getData = async()=>{
 ```
 
 #### 切割資料，方便做出頁碼
-:::spoiler  計算出總頁數，每頁要幾個資料
+- 計算出總頁數，每頁要幾個資料
 ```
 const page = ref({})
 function pagination(jsonData, nowPage){
@@ -69,7 +69,7 @@ function pagination(jsonData, nowPage){
   // pageBtn(page);
 }
 ```
-:::
+
 
 
 
@@ -93,7 +93,7 @@ function displayData(data){
 ```
 
 - 點擊按鈕，分成三個區塊，上一頁，最後一頁，中間數字頁
-:::spoiler 上一頁
+- 上一頁
 ```
   // 如果是 previous，在HTML有輸入 = 0
   if(num === 0 ){
@@ -112,10 +112,10 @@ function displayData(data){
     page.value.currentPage = p
     }
 ```
-:::
 
 
-:::spoiler 最後一頁  
+
+- 最後一頁  
 ```  
     // 邏輯跟上一頁雷同
   }else if(num === page.value.pageTotal+1 && page.value.currentPage != page.value.pageTotal+1 ){
@@ -124,11 +124,11 @@ function displayData(data){
     page.value.currentPage = p
     if (page.value.currentPage > page.value.pageTotal) page.value.currentPage = page.value.pageTotal
 ```
-:::
 
 
 
-:::spoiler 中間數字頁    
+
+- 中間數字頁    
   ```
   }else{
     // 就直接執行切換動作
@@ -142,7 +142,6 @@ onMounted(()=>{
   getData();
 })
 ```
-:::
 
 
 #### HTML 部分，分成兩區塊
