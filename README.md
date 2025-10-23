@@ -1,4 +1,4 @@
-#### 沒有公開，所以沒有網頁瀏覽
+#### [網頁瀏覽](https://inventor9871.github.io/hex_vue_pagination/)
 
 #### 先用 axios 抓資料
 - 安裝 axios
